@@ -1,0 +1,348 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css');
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: Microsoft JhengHei, sans-serif;
+}
+.wrap {
+  max-width: 1049px;
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+}
+button:hover {
+  cursor: pointer;
+}
+/* 表頭
+-------------------------------------------------- */
+header {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+header a {
+  display: block;
+  line-height: 56px;
+  color: #fff;
+  font-size: 1rem;
+}
+header h1 a {
+  font-size: 18px;
+  font-weight: 900;
+}
+header .header-item {
+  padding: 0 22px 0 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* 漢堡選單 */
+header .menu-bar-item {
+  display: block;
+  width: 21px;
+  height: 4px;
+  background-color: #fff;
+  margin-bottom: 4px;
+  border-radius: 2px;
+  transition: all 0.5s;
+}
+/* 導覽選單 */
+header .menu {
+  display: none;
+  background-color: #aaa;
+  transition: all 0.5s;
+  overflow-x: auto;
+}
+header .menu ul {
+  display: flex;
+}
+header .menu a {
+  white-space: nowrap;
+  padding: 0 13px;
+}
+header .menu a:focus {
+  background-color: #fa0;
+}
+
+/* 漢堡選單操作
+-------------------------------------------------- */
+#menu-bar-toggle {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+#menu-bar-toggle:checked ~ header .menu {
+  display: block;
+  border-top: 1px solid #fff;
+}
+#menu-bar-toggle:checked ~ header .menu-bar-item {
+  transform: translateY(-2px) rotate(135deg);
+}
+#menu-bar-toggle:checked ~ header .menu-bar-item:first-child {
+  transform: translateY(6px) rotate(45deg);
+}
+#menu-bar-toggle:checked ~ header .menu-bar-item:last-child {
+  display: none;
+}
+
+/* banner 區塊
+-------------------------------------------------- */
+.banner {
+  padding: 54px 0 113px;
+  background: url('../images/header_mobile.png') center / cover no-repeat;
+}
+.banner section {
+  padding: 20px 0;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.35);
+  color: #fff;
+}
+.banner h2 {
+  font-size: 36px;
+  line-height: 1.3333;
+  margin-bottom: 1rem;
+}
+.banner p {
+  font-size: 1rem;
+  line-height: 1.3125;
+}
+/* 768px 以上的顯示方式 */
+.banner .banner-title-md {
+  display: none;
+}
+
+/* 內容區塊
+-------------------------------------------------- */
+.content {
+  padding: 50px 0;
+  background-color: #efe9e7;
+  color: #3d1101;
+  text-align: center;
+}
+.content h1 {
+  font-size: 48px;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+.content p {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 35px;
+}
+/* 表單 */
+.content form {
+  max-width: 300px;
+  margin: 0 auto;
+  box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.16);
+  border-top: 3px solid #ff5e45;
+  padding: 15px 15px 21px;
+}
+.content form fieldset {
+  text-align: left;
+}
+.content form legend {
+  font-size: 18px;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.content form label {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3125;
+  margin-bottom: 3px;
+}
+.content form input {
+  width: 100%;
+  border: 1px solid #ccc;
+  box-shadow: inset 0px 1px 0px 0px #ececec;
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 10px 9px;
+}
+.content form input:focus,
+.content .btn-group button {
+  outline: none;
+}
+/* 各瀏覽器的 placeholder */
+.content input::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  font-family: 'Font Awesome 5 Brands' !important;
+  font-weight: 900;
+}
+.content input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  font-family: 'Font Awesome 5 Brands' !important;
+  font-weight: 900;
+}
+.content input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  font-family: 'Font Awesome 5 Free' !important;
+  font-weight: 900;
+}
+.content input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  font-family: 'Font Awesome 5 Free' !important;
+  font-weight: 900;
+}
+.content input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  font-family: 'Font Awesome 5 Free' !important;
+  font-weight: 900;
+}
+.content input::placeholder {
+  /* Most modern browsers */
+  font-family: 'Font Awesome 5 Free' !important;
+  font-weight: 900;
+  color: rgba(61, 17, 0, 0.5);
+}
+.content form a {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1.35714;
+  color: #ff5e45;
+  margin-bottom: 30px;
+}
+.content .form-item + .form-item {
+  margin-top: 15px;
+}
+.content .btn-group {
+  font-size: 0;
+}
+.content .btn-group button {
+  display: inline-block;
+  color: #fff;
+  font-size: 14px;
+  padding: 9px 0;
+  width: 45%;
+  border: none;
+  border-radius: 3px;
+}
+.content .btn-group button + button {
+  margin-left: 10%;
+}
+.content .btn-register {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+.content .btn-login {
+  background-color: #f56c23;
+}
+/* 頁尾
+-------------------------------------------------- */
+footer {
+  background-color: #efe9e7;
+  color: #3d1101;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0 11px 20px;
+}
+footer h2 {
+  font-size: 24px;
+  line-height: 1.33333;
+  margin-bottom: 1rem;
+}
+footer p,
+footer ul {
+  max-width: 300px;
+}
+footer p {
+  word-break: break-all;
+  line-height: 1.25;
+}
+footer .footer-item {
+  margin-bottom: 30px;
+}
+footer li {
+  line-height: 1.3125;
+}
+footer h1 {
+  font-size: 49px;
+  font-weight: 900;
+  margin-bottom: 22px;
+  text-align: right;
+}
+footer .link-group {
+  text-align: right;
+}
+footer .link-group a + a {
+  margin-left: 12px;
+}
+footer .fab {
+  font-size: 31px;
+  line-height: 36px;
+}
+footer .fa-google-plus-square {
+  color: #db4437;
+}
+footer .fa-twitter-square {
+  color: #41abe1;
+}
+footer .facebook-square {
+  color: #3a5795;
+}
+
+/* 平板
+-------------------------------------------------- */
+@media screen and (min-width: 767px) {
+  .banner {
+    padding: 67px 0 145px;
+    background: url('../images/header_desktop.png') center / cover no-repeat;
+  }
+  .banner section {
+    max-width: 460px;
+  }
+  .banner .banner-title-md {
+    display: block;
+  }
+  .banner .banner-title-sm {
+    display: none;
+  }
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 43px;
+    padding-right: 43px;
+  }
+  footer .footer-item {
+    width: 50%;
+  }
+  footer .footer-item:last-child {
+    flex: 1;
+    margin-bottom: 0;
+  }
+}
+
+/* 電腦板
+-------------------------------------------------- */
+@media screen and (min-width: 1024px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 35px 0 42px;
+  }
+  header .header-item {
+    padding: 0;
+  }
+  header .menu-bar {
+    display: none;
+  }
+  header .menu {
+    display: block;
+    background-color: transparent;
+    border: none;
+  }
+  footer {
+    flex-wrap: no-wrap;
+  }
+  footer .footer-item {
+    width: auto;
+    margin-bottom: 0;
+  }
+  footer .footer-item + .footer-item {
+    margin-left: 21px;
+  }
+}
